@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GRILLE's Portfolio - Python Developer · Data Analysis · Full Stack Explorer">
+    <meta name="keywords" content="Python,Data Analysis,Web Development,Portfolio">
+    <meta name="author" content="GRILLE">
+    
+    <meta property="og:title" content="GRILLE | Portfolio">
+    <meta property="og:description" content="Python Developer · Data Analysis · Full Stack Explorer">
+    <meta property="og:url" content="https://gex917.github.io/codepackage">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>GRILLE | Portfolio</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">GRILLE</span>
+            </div>
+        </a>
+        
+        <ul class="nav-menu">
+            <li>
+                <a href="#home" class="nav-link active">
+                    <div class="nav-text-wrapper">
+                        <span class="nav-text">HOME</span>
+                    </div>
+                    <span class="nav-line"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#projects" class="nav-link">
+                    <div class="nav-text-wrapper">
+                        <span class="nav-text">PROJECTS</span>
+                    </div>
+                    <span class="nav-line"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#skills" class="nav-link">
+                    <div class="nav-text-wrapper">
+                        <span class="nav-text">SKILLS</span>
+                    </div>
+                    <span class="nav-line"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="nav-link">
+                    <div class="nav-text-wrapper">
+                        <span class="nav-text">CONTACT</span>
+                    </div>
+                    <span class="nav-line"></span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="nav-actions">
+            <a href="user.html" class="user-avatar-link" title="View Profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">Hi, I'm</p>
+                    <h1 class="hero-name">GRILLE</h1>
+                    <p class="hero-subtitle">
+                        <span class="typed-text"></span>
+                        <span class="cursor">|</span>
+                    </p>
+                    <p class="hero-desc">
+                        College Student · Passionate about Programming & Data<br>
+                        Dedicated to solving real-world problems with code
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="cta-button primary">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="files/resume.pdf" download class="cta-button secondary">
+                            <i class="fas fa-download"></i>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/Gex917" target="_blank" class="social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:GRILLEPLC@OUTLOOK.COM" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="window-title">main.py</span>
+                        </div>
+                        <div class="window-body">
+                            <pre><code><span class="keyword">class</span> <span class="class-name">Developer</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="param">self</span>):
+        <span class="param">self</span>.name = <span class="string">"GRILLE"</span>
+        <span class="param">self</span>.role = <span class="string">"Student"</span>
+        <span class="param">self</span>.skills = [
+            <span class="string">"Python"</span>, <span class="string">"Data Analysis"</span>,
+            <span class="string">"Database"</span>, <span class="string">"Web Dev"</span>
+        ]
+    
+    <span class="keyword">def</span> <span class="function">say_hi</span>(<span class="param">self</span>):
+        <span class="keyword">print</span>(<span class="string">"Welcome!"</span>)
+
+me = <span class="class-name">Developer</span>()
+me.<span class="function">say_hi</span>()</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <p class="section-subtitle">Categorized · Continuously Updated</p>
+            </div>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All
+                </button>
+                <button class="filter-btn" data-filter="python">
+                    <i class="fab fa-python"></i> Python
+                </button>
+                <button class="filter-btn" data-filter="data">
+                    <i class="fas fa-chart-bar"></i> Data
+                </button>
+                <button class="filter-btn" data-filter="web">
+                    <i class="fas fa-globe"></i> Web
+                </button>
+                <button class="filter-btn" data-filter="java">
+                    <i class="fab fa-java"></i> Java
+                </button>
+                <button class="filter-btn" data-filter="cpp">
+                    <i class="fas fa-cogs"></i> C++
+                </button>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card" data-category="python data">
+                    <div class="project-image gradient-1">
+                        <div class="project-tag">Python · Data</div>
+                        <div class="project-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Student Grade Analysis</h3>
+                        <p class="project-desc">
+                            Python-based data analysis platform with data import, cleaning, statistical analysis, and visualization.
+                        </p>
+                        <div class="project-metrics">
+                            <span><i class="fas fa-star"></i> Course Project</span>
+                            <span><i class="fas fa-clock"></i> 2 Weeks</span>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gex917" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-file-alt"></i> Docs
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="python web">
+                    <div class="project-image gradient-2">
+                        <div class="project-tag">Python · Web</div>
+                        <div class="project-icon">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Blog System</h3>
+                        <p class="project-desc">
+                            Full-featured blog built with Flask, supporting posts, categories, and comments.
+                        </p>
+                        <div class="project-metrics">
+                            <span><i class="fas fa-star"></i> Personal</span>
+                            <span><i class="fas fa-clock"></i> 3 Weeks</span>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gex917" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="python data">
+                    <div class="project-image gradient-3">
+                        <div class="project-tag">Database</div>
+                        <div class="project-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Library Management System</h3>
+                        <p class="project-desc">
+                            MySQL-based system with borrowing, user management, and inventory statistics.
+                        </p>
+                        <div class="project-metrics">
+                            <span><i class="fas fa-star"></i> Course</span>
+                            <span><i class="fas fa-clock"></i> 4 Weeks</span>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PyQt5</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gex917" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="web">
+                    <div class="project-image gradient-4">
+                        <div class="project-tag">Web · Frontend</div>
+                        <div class="project-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p class="project-desc">
+                            This website! Responsive design with project filtering and dark theme.
+                        </p>
+                        <div class="project-metrics">
+                            <span><i class="fas fa-star"></i> Personal</span>
+                            <span><i class="fas fa-clock"></i> Ongoing</span>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Gex917/codepackage" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://gex917.github.io/codepackage" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Visit
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card placeholder-card" data-category="java">
+                    <div class="project-image gradient-5">
+                        <div class="project-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Java Project Coming Soon</h3>
+                        <p class="project-desc">Spring Boot Web Application</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card placeholder-card" data-category="cpp">
+                    <div class="project-image gradient-6">
+                        <div class="project-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>C++ Algorithms Coming Soon</h3>
+                        <p class="project-desc">Data Structures & Algorithms</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">STL</span>
+                            <span class="tech-tag">Algorithms</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-header">
+                <h2>Tech Stack</h2>
+                <p class="section-subtitle">Always Learning</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card primary-skill">
+                    <div class="skill-badge">Primary</div>
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> pandas / numpy</li>
+                        <li><i class="fas fa-check"></i> Flask Web Dev</li>
+                        <li><i class="fas fa-check"></i> Matplotlib</li>
+                        <li><i class="fas fa-check"></i> Web Scraping</li>
+                    </ul>
+                    <div class="skill-level">
+                        <div class="level-bar" style="width: 85%"></div>
+                        <span>85%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card primary-skill">
+                    <div class="skill-badge">Proficient</div>
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> MySQL</li>
+                        <li><i class="fas fa-check"></i> SQLite</li>
+                        <li><i class="fas fa-check"></i> SQL Optimization</li>
+                        <li><i class="fas fa-check"></i> Database Design</li>
+                    </ul>
+                    <div class="skill-level">
+                        <div class="level-bar" style="width: 80%"></div>
+                        <span>80%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Dev</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> HTML5 / CSS3</li>
+                        <li><i class="fas fa-check"></i> JavaScript ES6+</li>
+                        <li><i class="fas fa-check"></i> Vue.js</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                    </ul>
+                    <div class="skill-level">
+                        <div class="level-bar" style="width: 70%"></div>
+                        <span>70%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3>Java</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> OOP</li>
+                        <li><i class="fas fa-check"></i> Spring Boot</li>
+                        <li><i class="fas fa-check"></i> JDBC</li>
+                        <li><i class="fas fa-check"></i> Maven</li>
+                    </ul>
+                    <div class="skill-level">
+                        <div class="level-bar" style="width: 60%"></div>
+                        <span>60%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>C++</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Data Structures</li>
+                        <li><i class="fas fa-check"></i> STL</li>
+                        <li><i class="fas fa-check"></i> Algorithms</li>
+                        <li><i class="fas fa-check"></i> Memory Mgmt</li>
+                    </ul>
+                    <div class="skill-level">
+                        <div class="level-bar" style="width: 55%"></div>
+                        <span>55%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Git / GitHub</li>
+                        <li><i class="fas fa-check"></i> VS Code</li>
+                        <li><i class="fas fa-check"></i> Linux CLI</li>
+                        <li><i class="fas fa-check"></i> Docker</li>
+                    </ul>
+                    <div class="skill-level">
+                        <div class="level-bar" style="width: 65%"></div>
+                        <span>65%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-number" data-count="6">3</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <div class="stat-number" data-count="4">4</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" data-count="500">100</div>
+                    <div class="stat-label">Hours</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-coffee"></i></div>
+                    <div class="stat-number" data-count="999">20</div>
+                    <div class="stat-label">Coffees</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span>GRILLE</span>
+                    </div>
+                    <p class="footer-tagline">Code · Data · Create</p>
+                    <p class="footer-desc">
+                        Passionate about programming<br>
+                        Open to opportunities
+                    </p>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="form-title">Get In Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="subject" class="form-input form-select">
+                                <option value="" disabled selected>Subject</option>
+                                <option value="internship">Internship</option>
+                                <option value="project">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Message..." class="form-input form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">
+                            <span>Send</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="user.html"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="files/resume.pdf" download><i class="fas fa-file-pdf"></i> Resume</a></li>
+                        <li><a href="https://github.com/Gex917" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="mailto:GRILLEPLC@OUTLOOK.COM"><i class="fas fa-envelope"></i> Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; <span id="currentYear"></span> GRILLE. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
