@@ -1,11 +1,10 @@
 /**
- * GRILLE 个人网站 - 主要JavaScript文件
- * 功能：导航交互、项目筛选、动画效果、表单处理等
+ * GRILLE Portfolio - Main JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ==================== 基础配置 ====================
+    // ==================== Configuration ====================
     const CONFIG = {
         typingSpeed: 100,
         typingDeleteSpeed: 50,
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         animationDuration: 600
     };
     
-    // ==================== 导航栏功能 ====================
+    // ==================== Navigation ====================
     const Navigation = {
         init() {
             this.navLinks = document.querySelectorAll('.nav-link');
@@ -27,18 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         
         bindEvents() {
-            // 滚动时更新导航
             window.addEventListener('scroll', () => this.updateActiveNav());
             
-            // 移动端菜单
             if (this.mobileMenuBtn) {
                 this.mobileMenuBtn.addEventListener('click', () => this.toggleMobileMenu());
             }
             
-            // 导航链接点击
             this.navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    // 如果是外部页面链接，不阻止默认行为
                     if (link.getAttribute('href').includes('.html')) {
                         return;
                     }
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // 点击页面其他地方关闭菜单
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('nav')) {
                     this.closeMobileMenu();
@@ -103,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 打字机效果 ====================
+    // ==================== Typing Effect ====================
     const TypingEffect = {
         init() {
             this.element = document.querySelector('.typed-text');
@@ -148,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 项目筛选功能 ====================
+    // ==================== Project Filter ====================
     const ProjectFilter = {
         init() {
             this.filterBtns = document.querySelectorAll('.filter-btn');
@@ -188,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 统计数字动画 ====================
+    // ==================== Stats Counter ====================
     const StatsCounter = {
         init() {
             this.stats = document.querySelectorAll('.stat-number[data-count]');
@@ -228,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 滚动动画 ====================
+    // ==================== Scroll Animations ====================
     const ScrollAnimations = {
         init() {
             this.createObserver();
@@ -244,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, { threshold: 0.1 });
             
-            // 观察需要动画的元素
             const animElements = document.querySelectorAll(
                 '.project-card, .skill-card, .exp-card, .summary-card, .skill-detail-card'
             );
@@ -257,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 回到顶部按钮 ====================
+    // ==================== Back to Top ====================
     const BackToTop = {
         init() {
             this.button = document.getElementById('backToTop');
@@ -287,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 联系表单 ====================
+    // ==================== Contact Form ====================
     const ContactForm = {
         init() {
             this.form = document.getElementById('contactForm');
@@ -306,46 +299,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitBtn = this.form.querySelector('.send-btn');
             const originalText = submitBtn.innerHTML;
             
-            // 显示加载状态
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 发送中...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
             try {
-                // 这里可以集成表单服务，如 Formspree、EmailJS 等
-                // 示例使用 Formspree
-                const formData = new FormData(this.form);
-                
-                // 模拟发送（实际使用时替换为真实API）
-                await this.simulateSend(formData);
-                
-                // 成功提示
-                this.showMessage('消息发送成功！感谢您的联系。', 'success');
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                this.showMessage('Message sent successfully!', 'success');
                 this.form.reset();
-                
             } catch (error) {
-                // 失败提示
-                this.showMessage('发送失败，请稍后重试或直接发送邮件。', 'error');
-                console.error('Form submission error:', error);
-                
+                this.showMessage('Failed to send. Please try again.', 'error');
             } finally {
-                // 恢复按钮状态
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
             }
         },
         
-        simulateSend(formData) {
-            return new Promise((resolve) => {
-                setTimeout(resolve, 1500);
-            });
-        },
-        
         showMessage(message, type) {
-            // 移除已存在的消息
             const existingMsg = document.querySelector('.form-message');
             if (existingMsg) existingMsg.remove();
             
-            // 创建消息元素
             const msgEl = document.createElement('div');
             msgEl.className = `form-message ${type}`;
             msgEl.textContent = message;
@@ -362,7 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             this.form.appendChild(msgEl);
             
-            // 3秒后自动移除
             setTimeout(() => {
                 msgEl.style.animation = 'fadeOut 0.3s ease';
                 setTimeout(() => msgEl.remove(), 300);
@@ -370,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 动态年份 ====================
+    // ==================== Dynamic Year ====================
     const DynamicYear = {
         init() {
             const yearElements = document.querySelectorAll('#currentYear');
@@ -382,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 平滑滚动到锚点 ====================
+    // ==================== Smooth Scroll ====================
     const SmoothScroll = {
         init() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -407,55 +378,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // ==================== 鼠标跟随效果（可选）====================
-    const CursorFollower = {
-        init() {
-            // 仅在桌面端启用
-            if (window.innerWidth < 768) return;
-            
-            this.cursor = document.createElement('div');
-            this.cursor.className = 'cursor-follower';
-            this.cursor.style.cssText = `
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background: rgba(52, 152, 219, 0.3);
-                position: fixed;
-                pointer-events: none;
-                z-index: 9999;
-                transition: transform 0.15s ease;
-                mix-blend-mode: screen;
-            `;
-            document.body.appendChild(this.cursor);
-            
-            this.bindEvents();
-        },
-        
-        bindEvents() {
-            document.addEventListener('mousemove', (e) => {
-                this.cursor.style.left = e.clientX - 10 + 'px';
-                this.cursor.style.top = e.clientY - 10 + 'px';
-            });
-            
-            // 悬停在可点击元素上时放大
-            document.querySelectorAll('a, button, .project-card, .skill-card').forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    this.cursor.style.transform = 'scale(2)';
-                    this.cursor.style.background = 'rgba(52, 152, 219, 0.5)';
-                });
-                
-                el.addEventListener('mouseleave', () => {
-                    this.cursor.style.transform = 'scale(1)';
-                    this.cursor.style.background = 'rgba(52, 152, 219, 0.3)';
-                });
-            });
-        }
-    };
-    
-    // ==================== 页面加载动画 ====================
+    // ==================== Loading Animation ====================
     const LoadingAnimation = {
         init() {
-            // 添加淡入动画样式
             const style = document.createElement('style');
             style.textContent = `
                 @keyframes fadeIn {
@@ -470,14 +395,13 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             document.head.appendChild(style);
             
-            // 页面加载完成后移除loading状态
             window.addEventListener('load', () => {
                 document.body.classList.add('loaded');
             });
         }
     };
     
-    // ==================== 初始化所有模块 ====================
+    // ==================== Initialize ====================
     function initApp() {
         Navigation.init();
         TypingEffect.init();
@@ -488,13 +412,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ContactForm.init();
         DynamicYear.init();
         SmoothScroll.init();
-        CursorFollower.init();
         LoadingAnimation.init();
         
-        console.log('🚀 GRILLE 个人网站初始化完成');
+        console.log('🚀 GRILLE Portfolio initialized');
     }
     
-    // 启动应用
     initApp();
     
 });
